@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Elements</title>
+    <style>
+        .left, .right, .center{
+            width: 120px; height: 30px; line-height: 30px; text-align:center;
+            padding: 10px; background: cornflowerblue;
+            border-radius: 5px; text-shadow: 0px 0px 5px white;
+        }
+
+        .left{
+            float: left;
+            margin-right: 10px;
+        }
+
+        .right{
+            float: right; margin-left: 0px;
+        }
+
+        .center{margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">float: left</div>
+    <p>The float CSS property specifies that an element should be taken
+        from the normal flow and placed along the left or right side of its container, 
+        where text and inline elements will wrap around it</p>
+    <div class="right">flow: right</div>
+    <p>The float CSS property specifies that an element should be taken from the normal flow
+        and placedalong the left or right side of its container, where text and inline elements will wrap around it</p>
+    <p>Without floating, the line-block elements float like words in a text
+    and block elements just do not float and stay in a vertical block of full width</p>
+    <div class="center">no floating block</div>
+    <p>Without floating, the line-block elements float like words in a text
+    and block elements just do not float and stay in a vertical block of full width</p>
+</body>
+</html>
