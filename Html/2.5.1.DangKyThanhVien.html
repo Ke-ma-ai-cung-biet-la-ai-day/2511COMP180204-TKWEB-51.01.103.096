@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký thành viên</title>
+    <style>
+        .mytextbox{
+            color: #99FF33;
+            background-color: #006699;
+            border: 1px solid #996633;
+            width: 300px;
+        }
+        table{
+            border: 5px groove #993366;
+            background-color: #FFDDDD;
+            color: #003399; 
+            margin: 0px auto;
+            position: relative;
+        }
+        table td{
+            border: 1px solid #CC9999;
+        }
+        td{
+            padding: 7px;
+        }
+        .box{
+            display: inline-block;
+            justify-content: center;
+            gap: 10px;
+            width: auto;
+        }
+        .nghenghiep{
+            position: absolute;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <p align="center">ĐĂNG KÝ THÀNH VIÊN CLB YÊU NHẠC</p>
+        <table>
+            <tr style="border: 3px solid">
+                <td>Họ tên</td>
+                <td><input id="txtHoTen" type="text" required></td>
+            </tr>
+            <tr style="border: 3px solid">
+            </tr>
+            <tr style="border: 3px solid">
+                <td>Tên đăng nhập</td>
+                <td><input id="txtUserName" type="text" required></td>
+            </tr>
+            <tr style="border: 3px solid">
+                <td>Mật khẩu</td>
+                <td><input id="txtPass" type="password" required></td>
+            </tr>
+            <tr style="border: 3px solid">
+                <td>Gõ lại mật khẩu</td>
+                <td><input id="txtRepass" type="password" required></td>
+            </tr>
+            <tr style="border: 3px solid">
+                <td>Giới tính</td>
+                <td>
+                    <input id="rdGioiTinh" type="radio" name="gender" value="Nam">0 (Nam)
+                    <input id="rdGioiTinh" type="radio" name="gender" value="Nam">1 (Nữ)
+                </td>
+            </tr>
+            <tr style="border: 3px solid">
+                <td>Ngoại ngữ</td>
+                <td>
+                    <input id="chkAnh" type="checkbox" >Anh văn
+                    <input id="chkPhap" type="checkbox" >Pháp văn
+                    <input id="chkHoa" type="checkbox" >Hoa văn
+                </td>
+            </tr>
+            <tr style="border: 3px solid">
+                <td>Nghề nghiệp</td>
+                <td>
+                    <select id="cboNgheNghiep">
+                        <option value="0">Bạn làm nghề gì?</option>
+                        <option value="1">Học sinh - Sinh viên</option>
+                        <option value="2">Giáo viên</option>
+                        <option value="3">Nhân viên</option>
+                    </select>
+                </td>
+            </tr>
+            <tr style="border: 3px solid">
+                <td>Hình</td>
+                <td><input id="fHinh" type="file" ></td>
+            </tr>
+            <tr style="border: 3px solid">
+                <td>Sở thích</td>
+                <td><input id="txtSoThich" type="text" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input id="btnDangKy" type="submit" value="Đăng ký">
+                    <input id="btnLamLai" type="reset" value="Làm lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Elements</title>
+    <style>
+        .menu{
+            width: 960px; height: 50px;
+            background-color: gainsboro;
+            margin-left: 20px; margin-top: 15px;
+        }
+        .menu ul{
+            margin:0; padding: 0;
+            list-style: none; float:left;
+        }
+        .menu ul li{
+            float:left; position: relative;
+        }
+        .menu li a{
+            text-decoration: none; color: black;
+            line-height: 50px; border-right: 1px solid #333;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+        .menu ul li a:hover{
+            background-color: black;
+            color: white;
+            border-bottom: 1px solid red;
+        }
+        .menu ul li ul{
+            position: absolute;
+            background-color: #CCC;
+            display: none; width: 110%;
+        }
+        .menu ul li ul li a{
+            border-right: none; border-bottom: 1px solid #FFF;
+            padding-left: 17px;
+            margin-right: 0px;
+            line-height: 10px; display: block;
+            text-align: left; width: 100%;
+        }
+        .menu ul li ul li a:hover{
+            font-weight: bold;
+        }
+        .menu ul li:hover ul{display:block;}
+    </style>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul>
+                    <li><a href="#">Ti vi</a></li>
+                    <li><a href="#">Tủ lạnh</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Máy tính bảng</a></li>
+                    <li><a href="#">Điện thoại</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</body>
+</html>

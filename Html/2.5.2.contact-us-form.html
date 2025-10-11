@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        form {
+            background: #eee;
+            display: inline-block;
+        }
+        form span {
+            display: inline-block;
+            width: 85px;
+            background: #eee;
+            margin: 10px 3px 3px 10px;
+        }
+        form input, form select {
+            width: 150px;
+            height: 20px;
+            margin: 0px 5px;
+            box-sizing: border-box;
+        }
+        form input{margin-right: 10px;}
+        form select {margin: 3px; margin-left: 5px; }
+        form input[type='submit'] {
+            display: block;
+            margin: 10px 0px 12px 108px;
+            width: 80px; height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form>
+        <span> First name:</span>
+        <input type="text" name="firstname"> <br>
+        <span> Last name:</span>
+        <input type="text" name="lastname"><br>
+        <span>Email:</span>
+        <input type="email" name="email"> <br>
+        <span> Town:</span>
+        <select name="town">
+            <option value="1">Sofia</option>
+            <option value="2">Ohio</option>
+            <option value="3">Alaba</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

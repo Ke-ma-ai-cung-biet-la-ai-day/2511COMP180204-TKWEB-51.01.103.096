@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var product_list = ['Banh kem', 'Sua', 'Duong'];
+        function show(){
+            var s = "";
+            for(var i = 0; i < product_list.length; i++){
+                s = s + (i+1) + '.' + product_list[i] + '<br>';
+            }
+        }
+        document.getElementById('products').innerHTML = show();
+        function add(){
+            var spmoi = prompt("Nhap vao san pham moi: ");
+            product_list.push(spmoi);
+            document.getElementById('ds').innerHTML = show();
+        }
+        function edit(){
+            var vitri = prompt("Nhap vao vi tri can xoa: ");
+            var newname = prompt("Nhap vao ten san pham can sua: ");
+            product_list[vitri-1] = newname;
+            document.getElementById('ds').innerHTML = show();
+        }
+        function remove(){
+            var vitri = prompt("Nhap vao vi tri can xoa: ");
+            product_list.splice(vitri-1,1);
+            document.getElementById('ds').innerHTML = show();
+        }
+        document.getElementById('ds').innerHTML = show();
+    </script>
+    <h1>Các sản phẩm</h1>
+    <div id="ds"></div>
+    <button onclick="add()">Thêm</button>
+    <button onclick="edit()">Sửa</button>
+    <button onclick="remove()">Xóa</button>
+</body>
+</html>
