@@ -1,0 +1,120 @@
+        @keyframes background-drift {
+                    0% { background-position: 0 0; }
+                    100% { background-position: -3000px 0; } 
+                }
+        body {
+            background: linear-gradient(to bottom, #74b9ff, #0984e3); 
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; 
+            position: relative;
+        }
+        #shark{
+            left: 100px; top: 400px;
+            position: absolute;
+            animation-name: Shark;
+            animation-duration: 9s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        @keyframes Shark{
+            0% {left: 100px; top: 400px;}
+            20% {left: 500px; top: 400px;}
+            40% {left: 900px; top: 300px;}
+            50% {left: 1300px; top: 50px;}
+            60% {left: 900px; top: 100px;}
+            80% {left: 500px; top: 200px;}
+            100% {left: 100px; top: 400px; transform: scaleX(-1);}
+        }
+        #lan1{
+            left: 100px; top: 50px;
+            position: absolute;
+            animation-name: lan1;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        @keyframes lan1{
+            0% {left: 100px; top: 50px;}
+            20% {left: 500px; top: 250px;}
+            40% {left: 900px; top: 450px;}
+            50% {left: 1300px; top: 650px;}
+            60% {left: 900px; top: 450px;}
+            80% {left: 500px; top: 250px;}
+            100% {left: 100px; top: 50px; transform: scaleX(-1);}
+        }
+        #lan2{
+            left: 100px; top: 650px;
+            position: absolute;
+            animation-name:lan2;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        @keyframes lan2{
+            0% {left: 100px; top: 650px;}
+            20% {left: 500px; top: 450px;}
+            40% {left: 900px; top: 250px;}
+            50% {left: 1300px; top: 50px;}
+            60% {left: 900px; top: 250px;}
+            80% {left: 500px; top: 450px;}
+            100% {left: 100px; top: 650px; transform: scaleX(-1);}
+        }
+        #lan3{
+            left: 100px; top: 400px;
+            position: absolute;
+            animation-name: lan3;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        @keyframes lan3{
+            0% {left: 100px; top: 300px;}
+            20% {left: 500px; top: 300px;}
+            40% {left: 900px; top: 300px;}
+            50% {left: 1300px; top: 300px;}
+            60% {left: 900px; top: 300px;}
+            80% {left: 500px; top: 300px;}
+            100% {left: 100px; top: 300px; transform: scaleX(-1);}
+        }
+        #rua{
+            left: 100px; top: 500px;
+            position: absolute;
+            animation-name: rua;
+            animation-duration: 12s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        @keyframes rua{
+            0% {left: 100px; top: 500px;}
+            20% {left: 500px; top: 500px;}
+            40% {left: 900px; top: 500px;}
+            50% {left: 1300px; top: 500px;}
+            60% {left: 900px; top: 500px;}
+            80% {left: 500px; top: 500px;}
+            100% {left: 100px; top: 500px; transform: scaleX(-1);}
+        }
+        #goldfish{
+            left: 100px; top: 150px;
+            position: absolute;
+            animation-name: goldfish;
+            animation-duration: 11s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+        @keyframes goldfish{
+            0% {left: 100px; top: 150px;}
+            20% {left: 500px; top: 150px;}
+            40% {left: 900px; top: 150px;}
+            50% {left: 1300px; top: 150px;}
+            60% {left: 900px; top: 150px;}
+            80% {left: 500px; top: 150px;}
+            100% {left: 100px; top: 150px; transform: scaleX(-1);}
+        }
+        

@@ -1,42 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ứng dụng Quản lý Sản phẩm</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h3 { margin-left: 0; }
+        .form-control { margin-bottom: 20px; margin-right: 1170px;
+            padding: 20px 20px 20px 20px; background-color: #EEEEEE; }
+        #newProductName{ padding: 7px 12px 6px 12px; radius: 5px;}
+        button{ background-color: #FFFFCC; padding: 7px 12px 7px 12px; border-radius: 5px;}
+        button:hover{ background-color: #CCCC99; }
+        .add-product-container input[type="text"] {
+            padding: 5px; 
+            border: 1px solid #ccc; 
+            width: 300px;
+            margin-right: 10px;
+        }
+        .add-product-container button {
+            background-color: #f0f0f0;
+            padding: 5px 15px;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            cursor: pointer;
+        }
+        
+
+        #productTable { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin-top: 10px; 
+            border: none; 
+        }
+        #productTable th { 
+            background-color: transparent; 
+            border: none; 
+            padding: 0 8px 5px 0; 
+            color: #888;
+            font-weight: normal;
+        }
+        #productTable td { 
+            border: 1px solid #ccc;
+            padding: 8px; 
+            text-align: left; 
+            border-left: none; 
+            border-right: none;
+        }
+        
+       
+        #productTable th:nth-child(1),
+        #productTable td:nth-child(1) {
+            width: 50%; 
+            border-left: none; 
+        }
+        #productTable th:nth-child(2),
+        #productTable td:nth-child(2) {
+            width: 25%; 
+            text-align: center;
+        }
+         #productTable th:nth-child(3),
+        #productTable td:nth-child(3) {
+            width: 25%;
+            text-align: center;
+            border-right: none;
+        }
+
+        /* Nút */
+        .action-button { 
+            background-color: #f0f0f0; 
+            padding: 4px 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 0;
+            cursor: pointer;
+            margin: 0 5px; 
+        }
+        
+ 
+        .product-count {
+            float: right; 
+            font-size: 0.9em; 
+            color: #333;
+            font-weight: bold;
+            margin-top: -30px; 
+        }
+    </style>
 </head>
 <body>
+    <h3>Thêm sản phẩm mới</h3>
+    
+    <div class="form-control">
+        <input type="text" id="newProductName" placeholder="Nhập tên sản phẩm mới">
+        <button onclick="addProduct()">Thêm</button>
+    </div>
+
+    <h3>Danh sách Sản phẩm</h3>
+    <div id="productCount" class="product-count"></div>
+
+    <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th colspan="2" style="text-align: right; padding-right: 20px;"></th> 
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+                </tbody>
+        </table>
+    </div>
+    <input type="hidden" id="editProductName">
+    <input type="hidden" id="editProductIndex">
+    <button style="display: none;" id="updateButton" onclick="updateProduct()"></button>
+
     <script>
-        var product_list = ['Banh kem', 'Sua', 'Duong'];
-        function show(){
+        var product_list = [
+            'Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4',
+            'Apple iPhone 6S', 'Xiaomi Mi 5s Plus', 'Apple iPhone 8 Plus', 'Fujitsu F-04E', 'Oppo A71'
+        ];
+
+        
+        function displayProducts() {
+            var tableBody = document.getElementById('productTableBody');
+            var productCount = document.getElementById('productCount');
             var s = "";
-            for(var i = 0; i < product_list.length; i++){
-                s = s + (i+1) + '.' + product_list[i] + '<br>';
+            
+            for (var i = 0; i < product_list.length; i++) {
+                s += '<tr>';
+                
+                s += '<td>' + product_list[i] + '</td>';
+                
+                s += '<td style="width: 20%;"><button class="action-button" onclick="editProductPrompt(' + i + ')">Edit</button></td>';
+
+                s += '<td style="width: 20%;"><button class="action-button" onclick="removeProduct(' + i + ')">Delete</button></td>';
+                s += '</tr>';
+            }
+            tableBody.innerHTML = s;
+            
+            productCount.textContent = product_list.length + ' products';
+        }
+        
+        function addProduct() {
+            var newNameInput = document.getElementById('newProductName');
+            var newName = newNameInput.value.trim();
+
+            if (newName) {
+                product_list.push(newName);
+                newNameInput.value = "";
+                displayProducts();
             }
         }
-        document.getElementById('products').innerHTML = show();
-        function add(){
-            var spmoi = prompt("Nhap vao san pham moi: ");
-            product_list.push(spmoi);
-            document.getElementById('ds').innerHTML = show();
+        
+
+        function editProductPrompt(index) {
+            var oldName = product_list[index];
+            var newName = prompt("Sửa tên sản phẩm '" + oldName + "':", oldName);
+            
+  
+            if (newName !== null && newName.trim() !== "" && newName.trim() !== oldName) {
+                product_list[index] = newName.trim();
+                displayProducts();
+            }
         }
-        function edit(){
-            var vitri = prompt("Nhap vao vi tri can xoa: ");
-            var newname = prompt("Nhap vao ten san pham can sua: ");
-            product_list[vitri-1] = newname;
-            document.getElementById('ds').innerHTML = show();
+
+
+        function removeProduct(index) {
+            var productName = product_list[index];
+            
+            if (confirm("Bạn có chắc chắn muốn xoá sản phẩm: " + productName + "?")) {
+                product_list.splice(index, 1); 
+                displayProducts(); 
+            }
         }
-        function remove(){
-            var vitri = prompt("Nhap vao vi tri can xoa: ");
-            product_list.splice(vitri-1,1);
-            document.getElementById('ds').innerHTML = show();
-        }
-        document.getElementById('ds').innerHTML = show();
+
+        window.onload = displayProducts; 
     </script>
-    <h1>Các sản phẩm</h1>
-    <div id="ds"></div>
-    <button onclick="add()">Thêm</button>
-    <button onclick="edit()">Sửa</button>
-    <button onclick="remove()">Xóa</button>
 </body>
 </html>
